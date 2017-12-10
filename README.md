@@ -1,36 +1,36 @@
 # cfehome
 Trying django 1.11.8 
-1. Creating new blank project. The tutorial link https://www.codingforentrepreneurs.com/blog/create-a-blank-django-project/i <br>
-#To create blank django project(For Linux Ubuntu) we need to create virtual environment and working folders
-mkdir cfehome && cd cfehome
-virtualenv -p python3 . 
-#Do not forget To activate virtualenv. Virtualenv helps you to leave PC clean evenwith 100500 projects on it. 
-source bin/activate
-#install django and start project
-pip install django==1.11.8
-mkdir src && cd src
-django-admin.py startproject cfehome .
-#creating new settings module - it is not requirement, just good move
-cd cfehome
-mkdir settings && cd settings
-#creating __init__.py NOT SHURE WHY FOR NOW (need to discover). Tutorial says - to make it a module
-echo "from .base import *
+1. Creating new blank project. The tutorial link https://www.codingforentrepreneurs.com/blog/create-a-blank-django-project/ <br>
+#To create blank django project(For Linux Ubuntu) we need to create virtual environment and working folders<br>
+mkdir cfehome && cd cfehome<br>
+virtualenv -p python3 . <br>
+#Do not forget To activate virtualenv. Virtualenv helps you to leave PC clean evenwith 100500 projects on it. <br>
+source bin/activate<br>
+#install django and start project<br>
+pip install django==1.11.8<br>
+mkdir src && cd src<br>
+django-admin.py startproject cfehome .<br>
+#creating new settings module - it is not requirement, just good move<br>
+cd cfehome<br>
+mkdir settings && cd settings<br>
+#creating __init__.py NOT SHURE WHY FOR NOW (need to discover). Tutorial says - to make it a module<br>
+echo "from .base import *<br>
 
-from .production import *
+from .production import *<br>
 
-try:
-   from .local import *
-except:
-   pass
-" > __init__.py
-#change BASE_DIR in settins.py (changing default path to files)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-# to
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-#move default settings.py into new settings module and rename settings.py to base.py
-mv ~/Dev/cfehome/src/cfehome/settings.py ~/Dev/cfehome/src/cfehome/settings/base.py
-#copy local settings to make new (base.py and production.py)
-cp ~/Dev/cfehome/src/cfehome/settings/base.py ~/Dev/cfehome/src/cfehome/settings/local.py
+try:<br>
+   from .local import *<br>
+except:<br>
+   pass<br>
+" > __init__.py<br>
+#change BASE_DIR in settins.py (changing default path to files)<br>
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))<br>
+# to<br>
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),br>
+#move default settings.py into new settings module and rename settings.py to base.py<br>
+mv ~/Dev/cfehome/src/cfehome/settings.py ~/Dev/cfehome/src/cfehome/settings/base.py<br>
+#copy local settings to make new (base.py and production.py)<br>
+cp ~/Dev/cfehome/src/cfehome/settings/base.py ~/Dev/cfehome/src/cfehome/settings/local.py<br>
 
 cp ~/Dev/cfehome/src/cfehome/settings/base.py ~/Dev/cfehome/src/cfehome/settings/production.py
 #create requirements.txt
