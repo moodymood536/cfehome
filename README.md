@@ -1,6 +1,6 @@
 # cfehome
 Trying django 1.11.8 
-1. Creatin new blank project. The tutorial link https://www.codingforentrepreneurs.com/blog/create-a-blank-django-project/
+1. Creating new blank project. The tutorial link https://www.codingforentrepreneurs.com/blog/create-a-blank-django-project/i <br>
 #To create blank django project(For Linux Ubuntu) we need to create virtual environment and working folders
 mkdir cfehome && cd cfehome
 virtualenv -p python3 . 
